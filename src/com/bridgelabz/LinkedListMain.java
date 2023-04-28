@@ -4,18 +4,10 @@ import org.w3c.dom.*;
 
 public class LinkedListMain {
     public static void main(String[] args) {
-        LinkedList llist = new LinkedList();
-        // Create node with data 70
-        llist.push(70);
-
-        // Add node with data 30 before node with data 70
-        llist.push(30);
-
-        // Add node with data 56 before node with data 30
-        llist.push(56);
-
-        System.out.println("Linked list :");
-        llist.printList();
-
+        LinkedList list = new LinkedList(); // Create a new empty list
+        list.insert(56); // Insert the value 56
+        list.insert(30); // Insert the value 30
+        list.insert(70); // Insert the value 70
+        list.printList(); // Print the values of all nodes in the list
     }
 }
