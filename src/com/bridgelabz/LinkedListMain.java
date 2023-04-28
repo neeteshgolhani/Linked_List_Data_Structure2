@@ -14,7 +14,7 @@ public class LinkedListMain {
         // Add node with data 56 before node with data 30
         llist.push(56);
 
-        System.out.println("Linked list:");
+        System.out.println("Linked list :");
         llist.printList();
 
     }
