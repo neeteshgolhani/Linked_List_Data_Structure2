@@ -1,5 +1,13 @@
 package com.bridgelabz;
-
+/*The LinkedList class has a new method, append, which appends a new node with the given
+ data to the end of the list. If the list is empty,
+it sets the head to the new node. Otherwise, it traverses the list until it reaches the last node,
+ and sets the next pointer of the last node to the new node.
+The printList method is the same as before, and prints the values of all nodes in the list.
+The main method creates a new empty list, and appends three nodes with data values
+ 56, 30, and 70 to the end of the list in sequence. Finally, it prints the values of all
+  nodes in the list, which should be 56, 30, and 70.
+* */
 public class LinkedList {
     Node head; // Reference to the head of the list
 
@@ -8,18 +16,18 @@ public class LinkedList {
         this.head = null; // Initially, the list is empty
     }
 
-    // Method for inserting a new node with given data at the end of the list
-    public void insert(int data) {
-        Node newNode = new Node(data); // Create a new node with given data
-        if (this.head == null) { // If the list is empty
-            this.head = newNode; // Set the head to the new node
-        } else { // Otherwise
-            Node current = this.head; // Start at the head of the list
-            while (current.next != null) { // Traverse the list until the end
-                current = current.next;
-            }
-            current.next = newNode; // Add the new node to the end of the list
+    // Method for appending a new node with given data to the end of the list
+    public void append(int data) {
+        Node newNode = new Node(data); // Create a new node with the given data
+        if (this.head == null) { // If the list is empty, set the head to the new node
+            this.head = newNode;
+            return;
         }
+        Node current = this.head; // Start at the head of the list
+        while (current.next != null) { // Traverse the list until the end
+            current = current.next; // Move to the next node
+        }
+        current.next = newNode; // Set the next pointer of the last node to the new node
     }
 
     // Method for printing the values of all nodes in the list
@@ -32,4 +40,3 @@ public class LinkedList {
         System.out.println(); // Print a newline at the end
     }
 }
-
