@@ -1,13 +1,8 @@
 package com.bridgelabz;
-/*This Java code implements a singly linked list
-data structure and includes a JUnit test to check if the search method correctly
-finds nodes in the list. The LinkedList class includes methods to insert nodes at
-the start or end of the list, or after a specified node, and the search method traverses
-the list to find a node with a given value. The JUnit test creates a new list,
-inserts three nodes, and checks if the search method returns the correct node for a value
-that is present in the list, and returns null for a value that is not present.
-The Node class is a helper class to represent nodes in the list, with data and
-next fields to hold the node value and the reference to the next node, respectively.
+/*In this test case, we first create a new Linked List and insert the nodes
+70, 30, and 56. We then search for the node with key value 30 and insert a
+new node with data value 40 after it. Finally, we check that the final
+sequence of the Linked List is as expected.
  */
 public class LinkedList {
     Node head; // Reference to the head of the list
@@ -58,6 +53,14 @@ public class LinkedList {
         // This line will be commented out in the modified code.
         // return null;
         return current;
+    }
+    public void printList() {
+        Node current = this.head;
+        while (current != null) {
+            System.out.print(current.data + " ");
+            current = current.next;
+        }
+        System.out.println();
     }
 }
 
