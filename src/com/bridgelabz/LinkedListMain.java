@@ -5,16 +5,12 @@ import org.w3c.dom.*;
 public class LinkedListMain {
     public static void main(String[] args) {
         LinkedList list = new LinkedList(); // Create a new empty list
-        list.insertAtEnd(56);
-        list.insertAtEnd(30);
-        list.insertAtEnd(70);
-        list.printList(); // Should print "56 30 70"
-        list.popLast();
-        list.printList(); // Should print "56 30"
-        list.popLast();
-        list.printList(); // Should print "56"
-        list.popLast();
-        list.printList(); // Should print an empty line
-        list.popLast(); // Should print "List is empty."
+            list.insertAtStart(56);
+            list.insertAtEnd(70);
+            list.insertAfter(list.head.next, 30);
+            Node node = list.search(30);
+            if (node != null) {
+                System.out.println("Node with value 30 found!");
+            }
+        }
     }
-}
