@@ -5,16 +5,16 @@ import org.w3c.dom.*;
 public class LinkedListMain {
     public static void main(String[] args) {
         LinkedList list = new LinkedList(); // Create a new empty list
-        list.insertAtStart(70);
-        list.insertAtStart(30);
-        list.insertAtStart(56);
+        list.insertAtEnd(56);
+        list.insertAtEnd(30);
+        list.insertAtEnd(70);
         list.printList(); // Should print "56 30 70"
-        list.pop();
-        list.printList(); // Should print "30 70"
-        list.pop();
-        list.printList(); // Should print "70"
-        list.pop();
+        list.popLast();
+        list.printList(); // Should print "56 30"
+        list.popLast();
+        list.printList(); // Should print "56"
+        list.popLast();
         list.printList(); // Should print an empty line
-        list.pop(); // Should print "List is empty."
+        list.popLast(); // Should print "List is empty."
     }
 }
