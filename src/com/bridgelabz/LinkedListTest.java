@@ -1,48 +1,29 @@
 package com.bridgelabz;
 import org.junit.Test; // import necessary packages
 import static org.junit.Assert.*;
+/*In this test case, we first create a linked list with the
+ sequence 56->30->70. We then use the search method of the LinkedList class to find
+ the node with key value 30. Once we have this node, we use the insertAfter method of
+ the LinkedList class to insert a new node with value 40 after the node with key value 30.
+Finally, we use the toString method of the LinkedList class to check the final sequence of the linked list
+and compare it with the expected sequence using the assertEquals method of JUnit.*/
 public class LinkedListTest {
     // Define a test method using the @Test annotation
     @Test
-    public void testInsertAfterNode() {
-        // Create a new linked list
-        LinkedList list = new LinkedList();
+        public void testInsertAfter() {
+            LinkedList list = new LinkedList();
+            list.insertAtStart(70);
+            list.insertAtStart(30);
+            list.insertAtStart(56);
 
-        // Insert three nodes into the list
-        list.insertAtStart(70);
-        list.insertAtStart(30);
-        list.insertAtStart(56);
+            // Search for node with key value 30
+            Node node30 = list.search(30);
+            assertNotNull(node30);
 
-        // Get the node with key value 30
-        Node node30 = list.head.next;
+            // Insert 40 after node with key value 30
+            list.insertAfter(node30, 40);
 
-        // Insert a new node with data value 40 after node30
-        list.insertAfter(node30, 40);
-
-        // Check that the final sequence is correct
-        String expected = "56 30 40 70";
-        String actual = getListAsString(list);
-        assertEquals(expected, actual);
-    }
-
-    // Define a helper method to get the string representation of a linked list
-    private String getListAsString(LinkedList list) {
-        // Create a StringBuilder object to build the string representation of the list
-        StringBuilder sb = new StringBuilder();
-        // Set the current node to the head of the list
-        Node current = list.head;
-        // Loop through the list until the end is reached (i.e. current is null)
-        while (current != null) {
-            // Append the data of the current node to the StringBuilder
-            sb.append(current.data);
-            // If the current node has a next node, append a space to the StringBuilder
-            if (current.next != null) {
-                sb.append(" ");
-            }
-            // Move to the next node in the list
-            current = current.next;
+            // Check final sequence
+            assertEquals("56->30->40->70", list.toString());
         }
-        // Convert the StringBuilder to a String and return it
-        return sb.toString();
     }
-}
